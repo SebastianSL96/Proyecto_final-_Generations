@@ -15,3 +15,81 @@
   color: #1e3544 !important;
 }
 
+/* --- Ajuste general de la tarjeta --- */
+.card {
+    border-radius: 15px;
+    overflow: visible;         /* mantiene todo dentro sin desordenar */
+}
+
+/* --- Ajuste de la imagen --- */
+.card-img-top {
+    width: 100%;
+    height: auto;                /* que tome su altura natural */
+    object-fit: contain;         /* NO recorta */
+    background-color: #f5f5f5;   /* relleno suave si la imagen no llena todo */
+    padding: 10px;               /* para que no quede pegada al borde */
+    border-radius: 15px;
+}
+
+
+/* --- Ajuste del texto --- */
+.card-body {
+    padding: 20px;       /* hace que todo quede más compacto */
+}
+
+.card-title {
+    font-size: 1.1rem;       /* más compacto */
+}
+
+.card-text {
+    font-size: 0.9rem;
+}
+
+/* --- Íconos --- */
+.card-body a i {
+    font-size: 1.4rem;
+}
+
+.foto-wrapper {
+    width: 100%;
+    height: 350px;   /* ⬅️ antes 260px */
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.foto-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* Para que el zoom respetado no recorte el borde del wrapper */
+.foto-wrapper img.zoom-out {
+    transform-origin: center top; 
+}
+
+/* Ajustes específicos para las dos primeras fotos */
+.img-ajuste-1,
+.img-ajuste-2 {
+    object-fit: cover !important;   /* llena el espacio como las otras 2 */
+    object-position: top center;    /* sube el encuadre para mostrar la cara */
+}
+
+/* Correcciones individuales */
+.img-ajuste-1 {
+    object-position: 50% 15%;   /* Ajuste fino para Sebastián Leiva */
+}
+
+.img-ajuste-2 {
+    object-position: 50% 20%;   /* Ajuste fino para Mario Jiménez */
+}
+
+/* ALEJAR IMÁGENES QUE ESTÁN MUY ZOOMED-IN */
+.zoom-body {
+    object-fit: cover;
+    transform: scale(0.999);       /* 🔥 Aquí alejas la foto: más cuerpo */
+    transform-origin: center top; /* Mantiene la cara arriba y visible */
+}
+
